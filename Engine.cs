@@ -33,6 +33,30 @@ namespace zXmlMove
                 fileTxt = File.ReadAllLines(FileElenco);
                 Console.WriteLine($"Totale files da spostare: {fileTxt.Length}");
                 
+                for (int i = 0; i < fileTxt.Length; i++)
+                {
+                    string filexml = fileTxt[i];
+                    
+                    if (File.Exists(filexml))
+                    {
+                        Console.WriteLine($"File xml '{filexml}'");
+                        string pathOrigin = Path.GetFullPath(filexml);
+                        string pathDest = Path.Combine(toPath, filexml);
+
+                        Console.WriteLine($"Move {pathOrigin} -> {pathDest}");
+
+                        File.Move(pathOrigin, pathDest, true);
+
+                        
+                    }
+                    else
+                    {
+                        Console.WriteLine($"File xml '{filexml}': NON TROVATO");
+                    }
+                }
+
+                
+
 
 
                 

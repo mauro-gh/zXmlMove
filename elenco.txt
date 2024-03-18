@@ -1,0 +1,3 @@
+fattura1.xml
+fattura2.xml
+fattura3.xml
